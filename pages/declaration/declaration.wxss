@@ -1,0 +1,5 @@
+/* pages/declaration/declaration.wxss */
+view{
+  padding: 30rpx;
+  font-size: 28rpx
+}

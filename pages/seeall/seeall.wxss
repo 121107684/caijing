@@ -1,0 +1,15 @@
+/* pages/seeall/seeall.wxss */
+.text-green{
+  color: #00C203
+}
+.text-red{
+  color: #F43530
+}
+.parent .nametext{
+  float: left
+}
+.icos{
+  background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAATCAYAAAHT8tw/AAAAAXNSR0IArs4c6QAAATRJREFUKBV1UltygzAMlAlnSAuB4f4nST7aKyQxtoH0ElQrj4TJQzMYyVqtpbXdykZsFRaYON5HIqQkqi6XX3KK9D4QTdOCWEyAMU45OJ9/xMGG1RgxHM5kcq0xGM5pmi+q6wOdTg1RCCmfUay327gnBqea9AsatRhnsmmU5X4P6q7SPaIQ8gSaEaqUZnKOqKTEACtzKnDVkel69bapDoA2oHalfzlDg/Jf8eRlLD6LThXzUkqLJdFZ235nRTHYsvxZR2jCBiynRuKlK2gll8Pkfd/mK7CDaHsCUIXloq5r+GsFApHn+bErdMzIuia+1CMNQ19wbS63RdyzFL60tMHeex8FfA8v3vknwPN+PY6Rn/tjN+wzCKpBPTxem0EVGYZOEihSiQHEPswKJOJFCxGXQM3/A9NIZIUHv74UAAAAAElFTkSuQmCC') no-repeat center center / 16rpx auto;
+  width: 30rpx;height: 82rpx;
+  float: left
+}

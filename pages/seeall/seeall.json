@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "全部行情",
+    "enablePullDownRefresh": true,
+    "enablePullUpRefresh": true,
+    "backgroundColor": "#ddd"
+}

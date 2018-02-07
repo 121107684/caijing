@@ -1,0 +1,140 @@
+<!--pages/list/list.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索币种" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">搜索币种</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    </view>
+    <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+
+
+  <view class="page-body bg-w">
+    <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <view class="flaxbox">
+              <navigator url="../info/info?id=btc&name=BTC/USDT" class="child br">
+                <view class='numname'>BTC/USD</view>
+                <view class="moneoy">$123445</view>
+                <view class="flaxbox">
+                  <view class="child chanum">+1044</view>
+                  <view class="child  chaper">+10%</view>
+                </view>
+              </navigator>
+              <navigator url="../info/info?id=btc&name=BTC/USDT" class="child br">
+                <view class='numname'>BTC/USD</view>
+                <view class="moneoy">$123445</view>
+                <view class="flaxbox">
+                  <view class="child chanum">+1044</view>
+                  <view class="child  chaper">+10%</view>
+                </view>
+              </navigator>
+              <navigator url="../info/info?id=btc&name=BTC/USDT" class="child br">
+                <view class='numname'>BTC/USD</view>
+                <view class="moneoy">$123445</view>
+                <view class="flaxbox">
+                  <view class="child chanum">+1044</view>
+                  <view class="child  chaper">+10%</view>
+                </view>
+              </navigator>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+
+  <view class="page__bd pad mt-30">
+        <view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+            </view>
+            <view class="weui-tab__panel listbody">
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                   <view class="listtitle parent">
+                      <view class="name">名称</view>
+                      <view class="place textcenter">价格</view>
+                      <view class="cjnum textcenter">成交量</view>
+                      <view class="bfb textright">涨跌幅</view>
+                   </view>
+                   <navigator url="../info/info?id=btc&name=BTC/USDT" class="listtitle child">
+                      <view class="name">BTC/USDT</view>
+                      <view class="place textcenter">$2.598.00</view>
+                      <view class="cjnum textcenter">9.9万</view>
+                      <view class="bfb">
+                        <view class="red">+234%</view>
+                      </view>
+                   </navigator>
+                   <view class="listtitle child">
+                    <navigator  url="../seeall/seeall?id=zf" class="seeall">查看全部</navigator> 
+                   </view>
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                  <view class="listtitle">
+                      <view class="name">名称</view>
+                      <view class="place">价格</view>
+                      <view class="cjnum">成交量</view>
+                      <view class="bfb">涨跌幅</view>
+                   </view>
+                   <navigator url="../info/info?id=btc&name=BTC/USDT" class="listtitle child">
+                      <view class="name">BTC/USDT</view>
+                      <view class="place">$2.598.00</view>
+                      <view class="cjnum">9.9万</view>
+                      <view class="bfb">
+                        <view class="green">+234%</view>
+                      </view>
+                   </navigator>
+                   <view class="listtitle child">
+                   <navigator url="../seeall/seeall?id=df" class="seeall">查看全部</navigator>  
+                   </view>
+                </view>
+               
+            </view>
+        </view>
+    </view>
+
+
+
+
+
+
+</view>

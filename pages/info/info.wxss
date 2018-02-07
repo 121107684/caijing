@@ -1,0 +1,137 @@
+/* pages/info/info.wxss */
+.numcode {
+  display: flex;
+  background-color: #fff
+}
+.money, .boxcode, .aboutnum{
+  flex: 1;
+  padding: 40rpx 0rpx 0rpx 0rpx;
+}
+.money {
+  padding-left: 30rpx;
+  font-size: 48rpx;
+  margin-top: -12rpx
+}
+.money .rmb{
+  font-size: 30rpx
+}
+.codeinfo {
+  font-size: 32rpx;
+  line-height: 64rpx;
+  background-color: #F43530;
+  text-align: center;
+  border-radius: 32rpx;
+  color: #fff;
+  padding: 0 20rpx;
+  width: 160rpx
+}
+.aboutnum {
+  font-size: 24rpx
+}
+.aboutnum {
+  color: #999
+}
+.text-black {
+  display: inline;
+  color: #353535
+}
+.about {
+  padding: 30rpx;
+  color: #353535;
+  background-color: #fff;
+  overflow: hidden;
+  transform: all .5s
+}
+.about .elep{
+  font-size: 14px;
+}
+.btnmore{
+  height: 48rpx;
+  background-color: #fff;
+  line-height: 48rpx;
+  padding: 15rpx 0
+}
+.btnmore .morebtn{
+  font-size: 24rpx;
+  padding-right: 30rpx;
+  line-height: 48rpx;
+  float: right;
+  color: #586C94;
+}
+.infolist {
+  margin-top: 30rpx;
+  background-color: #fff;
+  font-size: 30rpx;
+}
+.infolist>view{
+  height: 88rpx;
+  border-bottom:1rpx solid #ccc;
+  display: flex
+}
+.infolist .name{
+  flex: 1;
+  line-height: 88rpx;
+  color: #999;
+  padding-left: 30rpx
+}
+.infolist .textin{
+  flex: 3;
+  line-height: 88rpx;
+  color: #666;
+  text-align: right;
+  padding-right: 30rpx
+}
+.infolist>view:last-child{
+  display: block;
+  height: auto;
+  border-bottom: none
+}
+.infolist>view:last-child .name{
+  line-height:1.5;
+  padding-top: 20rpx
+}
+.infolist>view:last-child .textin{
+  text-align: left;
+  padding-left: 30rpx;
+  line-height: 1.5;
+  font-size: 30rpx;
+  padding-bottom: 20rpx
+}
+.infoother{
+  margin-top: 30rpx
+}
+.listbody .listtitle:first-child .name,
+.listbody .listtitle:first-child .place,
+.listbody .listtitle:first-child .cjnum{
+  line-height: 86rpx
+}
+.listbody .listtitle>view{
+  line-height: 1.5
+}
+.listbody .listtitle>view.name
+{
+  flex: 2
+}
+.listtitle .name .othertitle{
+  display: flex
+}
+.listbody .child{
+  padding: 20rpx 0rpx;
+}
+.listbody .child .othertitle,
+.listbody .child .place .usd{
+  font-size: 30rpx;
+  color: #333
+}
+.listbody .child .othertitle .small,
+.listbody .child .place .rmb{
+  font-size: 24rpx;
+  color: #999;
+  line-height: 1;
+  margin-top: 14rpx
+}
+.listbody .child  .otherinfo{
+  padding-top: 10rpx;
+  font-size: 22rpx;
+  color: #999
+}

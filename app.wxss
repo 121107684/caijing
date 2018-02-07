@@ -1,0 +1,88 @@
+/**app.wxss**/
+@import "./style/weui.wxss";
+.page{
+  background-color: #f9f9f9
+}
+.clearfix:before, 
+.clearfix:after { 
+  display: table; 
+  line-height: 0; 
+  content: ""; 
+} 
+ 
+.clearfix:after { 
+  clear: both; 
+} 
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+}
+.mt-30 {
+  margin-top: 30rpx
+}
+.listbody{
+  background: #fff
+}
+.listbody .listtitle{
+  display: flex;
+  border-bottom:1rpx solid #e0e0e0
+}
+.listbody .listtitle:last-child{
+  border: none
+}
+.listbody .listtitle>view,
+.listbody .listtitle>navigator{
+  flex: 1;
+  text-indent: 1em;
+  font-size: 24rpx;
+  line-height: 86rpx
+}
+.listbody .listtitle view.child,
+.listbody .listtitle>navigator.child{
+  font-size: 28rpx
+}
+.listbody .listtitle.parent .bfb{
+  text-align: right;
+  padding-right: 30rpx
+}
+.listbody .listtitle .red{
+  color: #fff;
+  background: #F43530;
+  border-radius: 20rpx;
+  display: block;
+  height: 40rpx;
+  margin: 20rpx auto;
+  line-height: 40rpx;
+  width: 120rpx
+}
+.green{
+  color: #fff;
+  background: #00C203;
+  border-radius: 20rpx;
+  display: block;
+  height: 40rpx;
+  margin: 20rpx auto;
+  line-height: 40rpx;
+  width: 120rpx
+}
+.seeall{
+  line-height: 88rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #586C94;
+  border: none;
+  width: 100%
+}
+.textcenter{
+  text-align: center;
+  text-indent: 0px !important
+}
+.textright{
+  text-align: right;
+  text-indent: 0px !important
+}

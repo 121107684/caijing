@@ -1,0 +1,44 @@
+{
+  "pages":[
+    "pages/list/list",
+    "pages/seeall/seeall",
+    "pages/info/info",
+    "pages/declaration/declaration",
+    "pages/set/set",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "财经财经",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#777",
+    "borderStyle": "#fff",
+    "backgroundColor": "#fff",
+    "fontSize":"38px",
+    "list": [
+      {
+        "selectedIconPath": "images/hqact.png",
+        "iconPath": "images/hq.png",
+        "pagePath": "pages/list/list",
+        "text": "行情"
+      },
+      {
+        "selectedIconPath": "images/gn.png",
+        "iconPath": "images/gn.png",
+        "pagePath": "pages/set/set",
+        "text": "概念"
+      },
+      {
+        "selectedIconPath": "images/setact.png",
+        "iconPath": "images/set.png",
+        "pagePath": "pages/set/set",
+        "text": "选项"
+      }
+    ]
+  }
+}

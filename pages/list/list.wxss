@@ -1,0 +1,42 @@
+/* pages/list/list.wxss */
+swiper {
+ height: 220rpx;
+ width: 100%;
+ background: #fff
+}
+swiper image {
+ height: 100%;
+ width: 100%;
+}
+
+.flaxbox {
+  display: flex;
+  text-align: center;
+  
+}
+.flaxbox .child{
+  flex: 1;
+}
+.flaxbox .child.br{
+ border-right: 1rpx solid #ccc;
+ margin-top:36rpx;
+ height: 128rpx
+}
+.flaxbox .child.br:last-child{
+  border-right: none
+}
+.numname {
+  color: #999;
+  font-size: 24rpx;
+}
+.moneoy {
+  color: #ff0000;
+  font-size: 36rpx;
+}
+.chanum, .chaper{
+  color: #ff0000;
+  font-size: 24rpx;
+}
+.bg-w {
+  background: #fff
+}

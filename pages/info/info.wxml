@@ -1,0 +1,90 @@
+<view class="page">
+  <view class="numcode">
+    <view class="money">
+      <view class="usd">$8800.24</view>
+      <view class="rmb">≈ 55693.68</view>
+    </view>
+    <view class="boxcode red">
+      <view class="codeinfo red">+234.24$</view>
+      
+    </view>
+    <view class="aboutnum">
+      <view>24最高 <view class="text-black">$22985</view></view>
+      <view>24最低 <view class="text-black"> $22985</view></view>
+      <view>24H量  <view class="text-black">23025 BTC</view></view>
+    </view>
+  </view>
+  <view class="about" style="height: {{heidata?'110rpx':'auto'}}">
+    <view class="elep">比特币（BitCoin）的概念最初由中本聪在2009年提出，根据中本聪的思路设计发布的开源软件以及建构其上的P2P网络。比特币是一种P2P形式的数字货币。点对点的传输意味着一个去中心化的支付系统。</view>
+    <view class="elep">与大多数货币不同，比特币不依靠特定货币机构发行，它依据特定算法，通过大量的计算产生，比特币经济使用整个P2P网络中众多节点构成的分布式数据库来确认并记录所有的交易行为</view>
+    
+  </view>
+  <view class="btnmore">
+    <view class="morebtn" bindtap='showorhide'>查看更多</view>
+    </view>
+  <view class="infolist">
+    <view>
+      <view class="name">货币总量</view>
+      <view class="textin">1673.820.000 BTC</view>
+    </view>
+    <view>
+      <view class="name">现存流通</view>
+      <view class="textin">1673.820.000 BTC</view>
+    </view>
+    <view>
+      <view class="name">发布日期</view>
+      <view class="textin">1673.820.000 BTC</view>
+    </view>
+    <view>
+      <view class="name">市值</view>
+      <view class="textin">1673.820.000 BTC</view>
+    </view>
+    <view>
+      <view class="name">核心算法</view>
+      <view class="textin">1673.820.000 BTC</view>
+    </view>
+    <view>
+      <view class="name">主要特色</view>
+      <view class="textin">虚拟币创始者，受众最广，被信任最高。</view>
+    </view>
+  </view>
+
+  <view class="infoother listbody">
+
+    <view class="listtitle">
+      <view class="name">市场</view>
+      <view class="place">价格</view>
+      <view class="cjnum">24H交易量</view>
+    </view>
+    <navigator url="../info/info?id=btc&name=BTC/USDT" class="listtitle child">
+      <view class="name">
+        <view class="othertitle"> 火币pro
+          <view class="small">USDT</view>
+        </view>
+        <view class="otherinfo">占比23.96%</view>
+      </view>
+      <view class="place">
+        <view class="usd">$2.598.00</view>
+        <view class="rmb">$2.598.00</view>
+      </view>
+      <view class="bfb">
+        <view>99999.00</view>
+      </view>
+    </navigator>
+    <navigator url="../info/info?id=btc&name=BTC/USDT" class="listtitle child">
+      <view class="name">
+        <view class="othertitle"> 火币pro
+          <view class="small">USDT</view>
+        </view>
+        <view class="otherinfo">量 3249.7万 占比23.96%</view>
+      </view>
+      <view class="place">
+        <view class="usd">$2.598.00</view>
+        <view class="rmb">$2.598.00</view>
+      </view>
+      <view class="bfb">
+        <view class="green">-234%</view>
+      </view>
+    </navigator>
+  </view>
+</view>

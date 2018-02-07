@@ -1,0 +1,68 @@
+<!--pages/seeall/seeall.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索币种" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">搜索币种</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    </view>
+    <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+<view class="listbody">
+  <view class="listtitle parent">
+    <view bindtap="titletap" data-type="name" class="name"><view class="nametext">名称</view><view class="icos"></view></view>
+    <view bindtap="titletap" data-type="newplace" class="newplace"><view class="nametext">最新价</view><view class="icos"></view></view>
+    <view bindtap="titletap" data-type="listbfb" class="listbfb"><view class="nametext">涨跌幅</view><view class="icos"></view></view>
+    <view bindtap="titletap" data-type="cjnum" class="cjnum"><view class="nametext">成交量</view><view class="icos"></view></view>
+    <view bindtap="titletap" data-type="sz" class="sz"><view class="nametext">市值</view><view class="icos"></view></view>
+  </view>
+  <navigator url="../info/info?id=btc&name=BTC/USDT" class="listtitle child">
+    <view class="name">BTC/USDT</view>
+    <view class="newplace text-red">259.00</view>
+    <view class="upordown text-red">+490.2%</view>
+    <view class="cjnum">44万</view>
+    <view class="sz">¥2333万</view>
+  </navigator>
+  <navigator url="../info/info?id=btc&name=BTC/USDT" class="listtitle child">
+    <view class="name">BTC/USDT</view>
+    <view class="newplace text-green">259.00</view>
+    <view class="upordown text-green">-490.2%</view>
+    <view class="cjnum">44万</view>
+    <view class="sz">¥2333万</view>
+  </navigator>
+</view>
+  
+
+</view>
