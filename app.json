@@ -1,17 +1,20 @@
 {
   "pages":[
     "pages/list/list",
+    "pages/set/set",
+   
     "pages/seeall/seeall",
     "pages/info/info",
     "pages/declaration/declaration",
-    "pages/set/set",
+    
     "pages/index/index",
+    "pages/aboutus/aboutus",
     "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "财经财经",
+    "navigationBarTitleText": "同步财经",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {

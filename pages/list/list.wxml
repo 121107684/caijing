@@ -45,31 +45,15 @@
   <view class="page-body bg-w">
     <view class="page-section page-section-spacing swiper">
       <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for="{{background}}" wx:key="*this">
+        <block wx:for="{{background}}" wx:key="*this" wx:for-item="items">
           <swiper-item>
             <view class="flaxbox">
-              <navigator url="../info/info?id=btc&name=BTC/USDT" class="child br">
-                <view class='numname'>BTC/USD</view>
-                <view class="moneoy">$123445</view>
+              <navigator url='../info/info?id={{datas.symbol}}&title={{datas.name}}' wx:for="{{items}}" wx:key="*this" class="child br" wx:for-item="datas">
+                <view class='numname'>{{datas.name_pair}}</view>
+                <view class="moneoy">${{datas.price_usd}}</view>
                 <view class="flaxbox">
-                  <view class="child chanum">+1044</view>
-                  <view class="child  chaper">+10%</view>
-                </view>
-              </navigator>
-              <navigator url="../info/info?id=btc&name=BTC/USDT" class="child br">
-                <view class='numname'>BTC/USD</view>
-                <view class="moneoy">$123445</view>
-                <view class="flaxbox">
-                  <view class="child chanum">+1044</view>
-                  <view class="child  chaper">+10%</view>
-                </view>
-              </navigator>
-              <navigator url="../info/info?id=btc&name=BTC/USDT" class="child br">
-                <view class='numname'>BTC/USD</view>
-                <view class="moneoy">$123445</view>
-                <view class="flaxbox">
-                  <view class="child chanum">+1044</view>
-                  <view class="child  chaper">+10%</view>
+                  <view class="child chanum">${{datas.volumn_change_24h}}</view>
+                  <view class="child chaper">{{datas.percent_change_24h}}%</view>
                 </view>
               </navigator>
             </view>
@@ -96,12 +80,12 @@
                       <view class="cjnum textcenter">成交量</view>
                       <view class="bfb textright">涨跌幅</view>
                    </view>
-                   <navigator url="../info/info?id=btc&name=BTC/USDT" class="listtitle child">
-                      <view class="name">BTC/USDT</view>
-                      <view class="place textcenter">$2.598.00</view>
-                      <view class="cjnum textcenter">9.9万</view>
+                   <navigator wx:for="{{uplist}}" wx:key="*this" wx:for-item="datasup" url="../info/info?id={{datasup.symbol}}&title={{datasup.name}}" class="listtitle child">
+                      <view class="name">{{datasup.name}}</view>
+                      <view class="place textcenter">${{datasup.price_usd}}</view>
+                     <view class="cjnum textcenter">{{datasup.volume_24h_usd}} 万</view>
                       <view class="bfb">
-                        <view class="red">+234%</view>
+                        <view class="red">+{{datasup.percent_change_24h}}%</view>
                       </view>
                    </navigator>
                    <view class="listtitle child">
@@ -109,18 +93,18 @@
                    </view>
                 </view>
                 <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
-                  <view class="listtitle">
+                  <view class="listtitle  parent">
                       <view class="name">名称</view>
-                      <view class="place">价格</view>
-                      <view class="cjnum">成交量</view>
-                      <view class="bfb">涨跌幅</view>
+                      <view class="place textcenter">价格</view>
+                      <view class="cjnum textcenter">成交量</view>
+                      <view class="bfb textright">涨跌幅</view>
                    </view>
-                   <navigator url="../info/info?id=btc&name=BTC/USDT" class="listtitle child">
-                      <view class="name">BTC/USDT</view>
-                      <view class="place">$2.598.00</view>
-                      <view class="cjnum">9.9万</view>
+                   <navigator  wx:for="{{downlist}}" wx:key="*this" wx:for-item="datasdown" url="../info/info?id={{datasdown.symbol}}&title={{datasdown.name}}"class="listtitle child">
+                      <view class="name">{{datasdown.name}}</view>
+                      <view class="place textcenter">${{datasdown.price_usd}}</view>
+                      <view class="cjnum textcenter">{{datasdown.volume_24h_usd}} 万</view>
                       <view class="bfb">
-                        <view class="green">+234%</view>
+                        <view class="green">{{datasdown.percent_change_24h}}%</view>
                       </view>
                    </navigator>
                    <view class="listtitle child">

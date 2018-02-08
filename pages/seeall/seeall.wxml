@@ -48,20 +48,20 @@
     <view bindtap="titletap" data-type="cjnum" class="cjnum"><view class="nametext">成交量</view><view class="icos"></view></view>
     <view bindtap="titletap" data-type="sz" class="sz"><view class="nametext">市值</view><view class="icos"></view></view>
   </view>
-  <navigator url="../info/info?id=btc&name=BTC/USDT" class="listtitle child">
-    <view class="name">BTC/USDT</view>
-    <view class="newplace text-red">259.00</view>
-    <view class="upordown text-red">+490.2%</view>
-    <view class="cjnum">44万</view>
-    <view class="sz">¥2333万</view>
+  <navigator  wx:for="{{alllist}}" wx:key="*this" wx:for-item="alllist" url="../info/info?id={{alllist.symbol}}&title={{alllist.name}}" class="listtitle child">
+    <view class="name">{{alllist.symbol}}</view>
+    <view class="newplace text-red">{{alllist.price_usd}}</view>
+    <view class="upordown">{{alllist.percent_change_24h}}% </view>
+    <view class="cjnum">{{alllist.volume_24h_usd}}万</view>
+    <view class="sz">¥{{alllist.price_usd}}万</view>
   </navigator>
-  <navigator url="../info/info?id=btc&name=BTC/USDT" class="listtitle child">
+  <!-- <navigator url="../info/info?id=btc&name=BTC/USDT" class="listtitle child">
     <view class="name">BTC/USDT</view>
     <view class="newplace text-green">259.00</view>
     <view class="upordown text-green">-490.2%</view>
     <view class="cjnum">44万</view>
     <view class="sz">¥2333万</view>
-  </navigator>
+  </navigator> -->
 </view>
   
 

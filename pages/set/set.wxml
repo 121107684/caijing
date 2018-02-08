@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">登陆小程序</button>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
@@ -9,7 +9,7 @@
 
   </view>
   <view class="weui-cells weui-cells_after-title">
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <navigator url="../aboutus/aboutus" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
       <view class="weui-cell__bd">关于我们</view>
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>
@@ -22,4 +22,7 @@
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>
   </view>
+  <contact-button class="button-image" type="default-drak" size="24" session-from="weapp">
+  在线客服
+  </contact-button>
 </view>

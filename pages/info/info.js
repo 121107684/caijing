@@ -1,11 +1,14 @@
 // pages/info/info.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    heidata:true
+    heidata:true,
+    infodata:{},
+    codeEXinfolist:[]
   },
 
   /**
@@ -13,9 +16,25 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
+    var that = this
     wx.setNavigationBarTitle({
-      title: options.name//页面标题为路由参数
+      title: options.id//页面标题为路由参数
     })
+    app.publicpost('/getCoinExchangeList/' + options.id + "/" + Trim(options.title,'g'), 'GET', {}, codeEXinfo)
+    app.publicpost('/getCoinDetails/' + options.id + "/" + Trim(options.title, 'g'), 'GET', {}, codeinfo)
+    // app.publicpost('/getCoinExchangeList/BTC/Bitcoin', 'GET', {}, codeEXinfo)
+    // app.publicpost('/getCoinDetails/BTC/Bitcoin', 'GET', {}, codeinfo)
+    function codeEXinfo(res){
+      that.setData({
+        codeEXinfolist: res.data.data
+      })
+    }
+    function codeinfo(res){
+      that.setData({
+        infodata:res.data.data
+      })
+    }
+
   },
   showorhide:function(){
     this.setData({
@@ -71,3 +90,11 @@ Page({
   
   }
 })
+function Trim(str, is_global) {
+  var result;
+  result = str.replace(/(^\s+)|(\s+$)/g, "");
+  if (is_global.toLowerCase() == "g") {
+    result = result.replace(/\s/g, "");
+  }
+  return result;
+}

@@ -34,17 +34,14 @@ App({
     })
   },
   globalData: {
-    userInfo: null,
-    publicurl:"https://btc.test.com/"
+    userInfo: null
   },
   publicpost: function (url, method, data, successcall, servererror) {
+    let that = this
     var thistoken = wx.getStorageSync('token')
-    let postdata = {
-      token: thistoken,
-      data: { ...data }
-    }
+    let postdata = {...data}
     wx.request({
-      url: this.globalData.pubilcUrl + url, //仅为示例，并非真实的接口地址
+      url: 'https://kelacp.cn/api' + url, //仅为示例，并非真实的接口地址
       method: method,
       data: postdata,
       header: {

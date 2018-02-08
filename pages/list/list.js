@@ -8,11 +8,9 @@ Page({
   data: {
     inputShowed: false,
     inputVal: "",
-    background: [
-      { url: '../../images/banner/banner1.jpeg' },
-      { url: '../../images/banner/banner2.png' },
-      { url: '../../images/banner/banner2.png' }
-    ],
+    background: [],
+    uplist:[],
+    downlist:[],
     indicatorDots: true,
     vertical: false,
     autoplay: true,
@@ -57,6 +55,34 @@ Page({
         });
       }
     });
+    app.publicpost('/getFocusCoins','GET',{},getlist)
+    app.publicpost('/getWaveList/down', 'GET', {}, downlist)
+    app.publicpost('/getWaveList/up', 'GET', {}, uplist)
+    function getlist(res){
+      console.log(res);
+      var fzarr = []
+      for(var i=0;i<res.data.data.length;i){
+        var temparr = []
+        temparr.push(res.data.data[i])
+        temparr.push(res.data.data[i+1])
+        temparr.push(res.data.data[i+2])
+        i=i+3;
+        fzarr.push(temparr)
+      }
+      that.setData({
+        background:fzarr
+      })
+    }
+    function uplist(res){
+      that.setData({
+        uplist: res.data.data
+      })
+    }
+    function downlist(res) {
+      that.setData({
+        downlist: res.data.data
+      })
+    }
   },
   tabClick: function (e) {
     this.setData({

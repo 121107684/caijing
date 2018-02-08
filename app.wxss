@@ -40,7 +40,10 @@
   flex: 1;
   text-indent: 1em;
   font-size: 24rpx;
-  line-height: 86rpx
+  line-height: 86rpx;
+  overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
 }
 .listbody .listtitle view.child,
 .listbody .listtitle>navigator.child{
@@ -58,7 +61,7 @@
   height: 40rpx;
   margin: 20rpx auto;
   line-height: 40rpx;
-  width: 120rpx
+  width: 140rpx
 }
 .green{
   color: #fff;
@@ -68,7 +71,7 @@
   height: 40rpx;
   margin: 20rpx auto;
   line-height: 40rpx;
-  width: 120rpx
+  width: 140rpx
 }
 .seeall{
   line-height: 88rpx;
