@@ -1,16 +1,16 @@
 <view class="page">
   <view class="numcode">
     <view class="money">
-      <view class="usd">${{infodata.price_usd}}</view>
-      <view class="rmb">≈ {{infodata.price_cny}}</view>
+      <view class="usd">¥{{infodata.price_cny}}</view>
+      <view class="rmb">${{infodata.price_usd}}</view>
     </view>
-    <view class="boxcode red">
-      <view class="codeinfo red">{{infodata.percent_change_24h}}%</view>
+    <view class="boxcode">
+      <view class="codeinfo {{hasbl?'greentt':'red'}}">{{infodata.percent_change_24h}}%</view>
       
     </view>
     <view class="aboutnum">
-      <view>24最高 <view class="text-black">${{infodata.high}}</view></view>
-      <view>24最低 <view class="text-black"> ${{infodata.low}}</view></view>
+      <view>24H最高 <view class="text-black">¥{{infodata.high}}</view></view>
+      <view>24H最低 <view class="text-black">¥{{infodata.low}}</view></view>
       <view>24H量  <view class="text-black">{{infodata.volume_24h_usd}}</view></view>
     </view>
   </view>
@@ -18,7 +18,7 @@
     <view class="elep">{{infodata.summary}}</view>
   </view>
   <view class="btnmore">
-    <view class="morebtn" bindtap='showorhide'>查看更多</view>
+    <view class="morebtn" bindtap='showorhide'>{{moretext}}</view>
     </view>
   <view class="infolist">
     <view>
@@ -54,7 +54,7 @@
       <view class="place">价格</view>
       <view class="cjnum">24H交易量</view>
     </view>
-    <navigator wx:for="{{codeEXinfolist}}" wx:key="*this" wx:for-item="codeEXinfolist" url="../info/info?id=btc&name=BTC/USDT" class="listtitle child">
+    <view wx:for="{{codeEXinfolist}}" wx:key="*this" wx:for-item="codeEXinfolist" class="listtitle child">
       <view class="name">
         <view class="othertitle">
           {{codeEXinfolist.exchange}}<view class="small">{{codeEXinfolist.coin_pair}}</view>
@@ -62,12 +62,12 @@
         <view class="otherinfo">占比{{codeEXinfolist.volume24h_percentag}}%</view>
       </view>
       <view class="place">
-        <view class="usd">${{codeEXinfolist.price}}</view>
-        <view class="rmb">¥{{codeEXinfolist.price_cny}}</view>
+        <view class="usd">¥{{codeEXinfolist.price_cny}}</view>
+        <view class="rmb">${{codeEXinfolist.price}}</view>
       </view>
       <view class="bfb">
         <view>{{codeEXinfolist.volume24h}}</view>
       </view>
-    </navigator>
+    </view>
   </view>
 </view>

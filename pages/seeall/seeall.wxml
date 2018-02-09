@@ -18,24 +18,13 @@
       <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
     </view>
     <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
-      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">
-          <view>实时搜索文本</view>
-        </view>
-      </navigator>
-      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">
-          <view>实时搜索文本</view>
-        </view>
-      </navigator>
-      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">
-          <view>实时搜索文本</view>
-        </view>
-      </navigator>
-      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">
-          <view>实时搜索文本</view>
+      <navigator wx:for="{{searchlistdata}}" wx:key="*this" wx:for-item="searchlistdata" url="../info/info?id={{searchlistdata.symbol}}&title={{searchlistdata.name}}" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd flbb">
+          <view>{{searchlistdata.symbol}}</view>
+          <view class="smtext">¥{{searchlistdata.price_cny}}</view>
+          <view  class="smbox"> 
+             <view class="{{searchlistdata.hasbl?'green':'red'}}">{{searchlistdata.hasbl?'':'+'}} {{searchlistdata.percent_change_24h}}%</view>
+           </view>
         </view>
       </navigator>
     </view>
@@ -43,17 +32,17 @@
 <view class="listbody">
   <view class="listtitle parent">
     <view bindtap="titletap" data-type="name" class="name"><view class="nametext">名称</view><view class="icos"></view></view>
-    <view bindtap="titletap" data-type="newplace" class="newplace"><view class="nametext">最新价</view><view class="icos"></view></view>
-    <view bindtap="titletap" data-type="listbfb" class="listbfb"><view class="nametext">涨跌幅</view><view class="icos"></view></view>
-    <view bindtap="titletap" data-type="cjnum" class="cjnum"><view class="nametext">成交量</view><view class="icos"></view></view>
-    <view bindtap="titletap" data-type="sz" class="sz"><view class="nametext">市值</view><view class="icos"></view></view>
+    <view bindtap="titletap" data-type="price" class="newplace"><view class="nametext">最新价</view><view class="icos"></view></view>
+    <view bindtap="titletap" data-type="percent" class="listbfb"><view class="nametext">涨跌幅</view><view class="icos"></view></view>
+    <view bindtap="titletap" data-type="volumn" class="cjnum"><view class="nametext">成交量</view><view class="icos"></view></view>
+    <view bindtap="titletap" data-type="cap" class="sz"><view class="nametext">市值</view><view class="icos"></view></view>
   </view>
   <navigator  wx:for="{{alllist}}" wx:key="*this" wx:for-item="alllist" url="../info/info?id={{alllist.symbol}}&title={{alllist.name}}" class="listtitle child">
     <view class="name">{{alllist.symbol}}</view>
-    <view class="newplace text-red">{{alllist.price_usd}}</view>
+    <view class="newplace">¥{{alllist.price_cny}}</view>
     <view class="upordown">{{alllist.percent_change_24h}}% </view>
-    <view class="cjnum">{{alllist.volume_24h_usd}}万</view>
-    <view class="sz">¥{{alllist.price_usd}}万</view>
+    <view class="cjnum">{{alllist.volume_24h_usd}}</view>
+    <view class="sz">¥{{alllist.market_cap_usd}}</view>
   </navigator>
   <!-- <navigator url="../info/info?id=btc&name=BTC/USDT" class="listtitle child">
     <view class="name">BTC/USDT</view>

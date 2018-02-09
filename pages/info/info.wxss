@@ -17,13 +17,17 @@
 }
 .codeinfo {
   font-size: 32rpx;
-  line-height: 64rpx;
+  line-height:48rpx;
   background-color: #F43530;
   text-align: center;
   border-radius: 32rpx;
   color: #fff;
-  padding: 0 20rpx;
+  padding: 0 16rpx;
   width: 160rpx
+}
+.codeinfo.greentt{
+  
+  background-color:#00C203;
 }
 .aboutnum {
   font-size: 24rpx
@@ -134,4 +138,8 @@
   padding-top: 10rpx;
   font-size: 22rpx;
   color: #999
+}
+.listbody .listtitle.child .bfb view{
+  line-height: 80rpx;
+  font-size: 32rpx
 }

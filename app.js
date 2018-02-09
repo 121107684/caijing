@@ -34,7 +34,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    timelong:5000
   },
   publicpost: function (url, method, data, successcall, servererror) {
     let that = this
@@ -49,10 +50,16 @@ App({
       },
       success: function (res) {
         successcall(res);
+        setTimeout(function(){
+          wx.hideLoading()
+        },1000)
+        
       },
       fail: function (res) {
         //servererror(res);
+        wx.hideLoading()
       }
     })
   }
+  
 })

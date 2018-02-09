@@ -1,12 +1,12 @@
 {
   "pages":[
+    
     "pages/list/list",
+    "pages/searchlist/searchlist",
     "pages/set/set",
-   
     "pages/seeall/seeall",
     "pages/info/info",
     "pages/declaration/declaration",
-    
     "pages/index/index",
     "pages/aboutus/aboutus",
     "pages/logs/logs"
@@ -31,16 +31,10 @@
         "text": "行情"
       },
       {
-        "selectedIconPath": "images/gn.png",
-        "iconPath": "images/gn.png",
-        "pagePath": "pages/set/set",
-        "text": "概念"
-      },
-      {
         "selectedIconPath": "images/setact.png",
         "iconPath": "images/set.png",
         "pagePath": "pages/set/set",
-        "text": "选项"
+        "text": "个人"
       }
     ]
   }

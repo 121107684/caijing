@@ -13,6 +13,9 @@
 .clearfix:after { 
   clear: both; 
 } 
+.centeralign{
+  text-align: center
+}
 .container {
   height: 100%;
   display: flex;
@@ -30,7 +33,7 @@
 }
 .listbody .listtitle{
   display: flex;
-  border-bottom:1rpx solid #e0e0e0
+  border-bottom:1rpx solid #e0e0e0;
 }
 .listbody .listtitle:last-child{
   border: none
@@ -47,31 +50,28 @@ white-space: nowrap;
 }
 .listbody .listtitle view.child,
 .listbody .listtitle>navigator.child{
-  font-size: 28rpx
+  font-size: 28rpx;
+  padding-right:15rpx;
 }
 .listbody .listtitle.parent .bfb{
-  text-align: right;
-  padding-right: 30rpx
+  text-align:center;
 }
 .listbody .listtitle .red{
   color: #fff;
   background: #F43530;
   border-radius: 20rpx;
-  display: block;
-  height: 40rpx;
-  margin: 20rpx auto;
+  display: inline;
   line-height: 40rpx;
-  width: 140rpx
+  padding: 6rpx 10rpx;
+  
 }
 .green{
   color: #fff;
   background: #00C203;
   border-radius: 20rpx;
-  display: block;
-  height: 40rpx;
-  margin: 20rpx auto;
+  display: inline;
   line-height: 40rpx;
-  width: 140rpx
+   padding: 6rpx 10rpx;
 }
 .seeall{
   line-height: 88rpx;
@@ -89,3 +89,29 @@ white-space: nowrap;
   text-align: right;
   text-indent: 0px !important
 }
+.redtext{
+  color: #ff0000 !important;
+}
+.greentext{
+  color: #00C203 !important;
+}
+.flbb {
+  display: flex
+}
+.flbb view{
+  flex: 1
+}
+.flbb .smtext {
+  font-size: .6;
+  color: #999
+}
+.smbox view{
+  color: #fff;
+  border-radius: 20rpx;
+  display: inline;
+  line-height: 40rpx;
+  padding: 3rpx 10rpx;
+  font-size: .6;
+}
+.smbox view.red{background: #F43530;}
+.smbox view.green{background: #00C203;}

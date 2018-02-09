@@ -40,3 +40,10 @@ swiper image {
 .bg-w {
   background: #fff
 }
+.listbody .listtitle .seeall{
+  font-size: 30rpx;
+}
+.listbody .listtitle.child .bfb{
+  text-align: right;
+  margin-right: 20rpx
+}

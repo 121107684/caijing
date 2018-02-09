@@ -17,25 +17,14 @@
       </view>
       <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
     </view>
-    <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
-      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">
-          <view>实时搜索文本</view>
-        </view>
-      </navigator>
-      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">
-          <view>实时搜索文本</view>
-        </view>
-      </navigator>
-      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">
-          <view>实时搜索文本</view>
-        </view>
-      </navigator>
-      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">
-          <view>实时搜索文本</view>
+    <view class="weui-cells searchbar-result"  wx:if="{{inputVal.length > 0}}">
+      <navigator wx:for="{{searchlistdata}}" wx:key="*this" wx:for-item="searchlistdata" url="../info/info?id={{searchlistdata.symbol}}&title={{searchlistdata.name}}" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd flbb">
+          <view>{{searchlistdata.symbol}}</view>
+          <view class="smtext">¥{{searchlistdata.price_cny}}</view>
+          <view  class="smbox"> 
+            <view class="{{searchlistdata.hasbl?'green':'red'}}">{{searchlistdata.hasbl?'':'+'}} {{searchlistdata.percent_change_24h}}%</view>
+           </view>
         </view>
       </navigator>
     </view>
@@ -50,10 +39,10 @@
             <view class="flaxbox">
               <navigator url='../info/info?id={{datas.symbol}}&title={{datas.name}}' wx:for="{{items}}" wx:key="*this" class="child br" wx:for-item="datas">
                 <view class='numname'>{{datas.name_pair}}</view>
-                <view class="moneoy">${{datas.price_usd}}</view>
+                <view class="moneoy {{datas.hasbl?'greentext':'redtext'}}">¥{{datas.price_cny}}</view>
                 <view class="flaxbox">
-                  <view class="child chanum">${{datas.volumn_change_24h}}</view>
-                  <view class="child chaper">{{datas.percent_change_24h}}%</view>
+                  <view class="child chanum {{datas.hasbl?'greentext':'redtext'}}">¥{{datas.volumn_change_24h}}</view>
+                  <view class="child chaper {{datas.hasbl?'greentext':'redtext'}}">{{datas.hasbl?'':'+'}}{{datas.percent_change_24h}}%</view>
                 </view>
               </navigator>
             </view>
@@ -76,14 +65,14 @@
                 <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
                    <view class="listtitle parent">
                       <view class="name">名称</view>
-                      <view class="place textcenter">价格</view>
-                      <view class="cjnum textcenter">成交量</view>
+                      <view class="place ">价格</view>
+                      <view class="cjnum ">成交额</view>
                       <view class="bfb textright">涨跌幅</view>
                    </view>
                    <navigator wx:for="{{uplist}}" wx:key="*this" wx:for-item="datasup" url="../info/info?id={{datasup.symbol}}&title={{datasup.name}}" class="listtitle child">
-                      <view class="name">{{datasup.name}}</view>
-                      <view class="place textcenter">${{datasup.price_usd}}</view>
-                     <view class="cjnum textcenter">{{datasup.volume_24h_usd}} 万</view>
+                      <view class="name">{{datasup.symbol}}</view>
+                      <view class="place ">¥{{datasup.price_cny}}</view>
+                     <view class="cjnum ">${{datasup.volume_24h_usd}}</view>
                       <view class="bfb">
                         <view class="red">+{{datasup.percent_change_24h}}%</view>
                       </view>
@@ -95,14 +84,14 @@
                 <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
                   <view class="listtitle  parent">
                       <view class="name">名称</view>
-                      <view class="place textcenter">价格</view>
-                      <view class="cjnum textcenter">成交量</view>
+                      <view class="place ">价格</view>
+                      <view class="cjnum ">成交额</view>
                       <view class="bfb textright">涨跌幅</view>
                    </view>
                    <navigator  wx:for="{{downlist}}" wx:key="*this" wx:for-item="datasdown" url="../info/info?id={{datasdown.symbol}}&title={{datasdown.name}}"class="listtitle child">
-                      <view class="name">{{datasdown.name}}</view>
-                      <view class="place textcenter">${{datasdown.price_usd}}</view>
-                      <view class="cjnum textcenter">{{datasdown.volume_24h_usd}} 万</view>
+                      <view class="name">{{datasdown.symbol}}</view>
+                      <view class="place ">¥{{datasdown.price_cny}}</view>
+                      <view class="cjnum ">${{datasdown.volume_24h_usd}}</view>
                       <view class="bfb">
                         <view class="green">{{datasdown.percent_change_24h}}%</view>
                       </view>
@@ -111,14 +100,26 @@
                    <navigator url="../seeall/seeall?id=df" class="seeall">查看全部</navigator>  
                    </view>
                 </view>
-               
+               <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+                  <view class="listtitle  parent">
+                      <view class="name">名称</view>
+                      <view class="place ">价格</view>
+                      <view class="cjnum ">市值</view>
+                      <view class="bfb textright">涨跌幅</view>
+                   </view>
+                   <navigator  wx:for="{{caplist}}" wx:key="*this" wx:for-item="caplist" url="../info/info?id={{caplist.symbol}}&title={{caplist.name}}"class="listtitle child">
+                      <view class="name">{{caplist.symbol}}</view>
+                      <view class="place ">¥{{caplist.price_cny}}</view>
+                      <view class="cjnum ">${{caplist.market_cap_usd}}</view>
+                      <view class="bfb">
+                        <view class="centeralign {{caplist.hasbl?'green':'red'}}">{{caplist.hasbl?'':'+'}}{{caplist.percent_change_24h}}%</view>
+                      </view>
+                   </navigator>
+                   <view class="listtitle child">
+                   <navigator url="../seeall/seeall?id=ph" class="seeall">查看全部</navigator>  
+                   </view>
+                </view>
             </view>
         </view>
     </view>
-
-
-
-
-
-
 </view>

@@ -3,7 +3,7 @@
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">登陆小程序</button>
     <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
 
@@ -17,12 +17,18 @@
       <view class="weui-cell__bd">意见反馈</view>
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>
+    <button open-type="contact" class="weui-cell weui-cell_access btnfeekback" hover-class="weui-cell_active">
+      <view class="weui-cell__bd">意见反馈</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </button>
     <navigator url="../declaration/declaration" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
       <view class="weui-cell__bd">免责声明</view>
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>
   </view>
-  <contact-button class="button-image" type="default-drak" size="24" session-from="weapp">
+  <view class="button-kf"></view>
+  <button open-type="contact" class="button-kf"></button>
+  <!-- <contact-button class="button-image" type="default-drak" size="24" session-from="weapp">
   在线客服
-  </contact-button>
+  </contact-button> -->
 </view>
